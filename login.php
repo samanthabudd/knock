@@ -41,7 +41,6 @@
 
 <?php
     session_start();
-    //var_dump($_POST);
     $username = $_POST['uname'];
     $password = $_POST['psw'];
     //$password = base64_encode($password);
@@ -56,13 +55,6 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    
-  //  $sql = "SELECT facebook, instagram, snapchat, twitter FROM usernames WHERE username='sambudd'";
-  //  $result = $conn->query($sql);
-  //  $row = $result->fetch_assoc();
-    //echo '<pre>'; print_r($row); echo '</pre>';
-   //print("<pre>".print_r($row,true)."</pre>");
-    //echo json_encode($row);
     
     $sql= "SELECT * FROM usernames WHERE username = '$username' and password = '$password'";
     $result = $conn->query($sql);
